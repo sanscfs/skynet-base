@@ -20,6 +20,6 @@ jobs:
         PY_VERSION=3.12
       rolling-tag: py3.12
       extra-tags: |
-        nexus.nexus.svc:8083/skynet-base:py3.12-${{ github.sha }}
+        docker-hosted.sanscfs.dev/skynet-base:py3.12-${{ github.sha }}
         ghcr.io/sanscfs/skynet-base:py3.12-${{ github.sha }}
     secrets: inherit

@@ -42,10 +42,10 @@ jobs:
           platforms: linux/amd64,linux/arm64
           build-args: PY_VERSION=${{ matrix.py }}
           tags: |
-            docker-cache.sanscfs.dev/skynet-base:py${{ matrix.py }}
-            docker-cache.sanscfs.dev/skynet-base:py${{ matrix.py }}-${{ github.sha }}
+            docker-hosted.sanscfs.dev/skynet-base:py${{ matrix.py }}
+            docker-hosted.sanscfs.dev/skynet-base:py${{ matrix.py }}-${{ github.sha }}
             ghcr.io/sanscfs/skynet-base:py${{ matrix.py }}
             ghcr.io/sanscfs/skynet-base:py${{ matrix.py }}-${{ github.sha }}
-          cache-from: type=registry,ref=docker-cache.sanscfs.dev/skynet-base:py${{ matrix.py }}-buildcache
-          cache-to:   type=registry,ref=docker-cache.sanscfs.dev/skynet-base:py${{ matrix.py }}-buildcache,mode=max,image-manifest=true,oci-mediatypes=true
+          cache-from: type=registry,ref=docker-hosted.sanscfs.dev/skynet-base:py${{ matrix.py }}-buildcache
+          cache-to:   type=registry,ref=docker-hosted.sanscfs.dev/skynet-base:py${{ matrix.py }}-buildcache,mode=max,image-manifest=true,oci-mediatypes=true
           push: true

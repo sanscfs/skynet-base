@@ -6,7 +6,7 @@ Shared Python base image for every Skynet component. Pre-installs the wheels tha
 
 ```dockerfile
 # syntax=docker/dockerfile:1.7
-FROM docker-cache.sanscfs.dev/skynet-base:py3.12
+FROM docker-hosted.sanscfs.dev/skynet-base:py3.12
 
 WORKDIR /app
 COPY requirements.txt .
@@ -27,7 +27,7 @@ CMD ["python", "-m", "app"]
 - `py3.12-<sha>` — pinned build
 
 Published to:
-- `docker-cache.sanscfs.dev/skynet-base` (internal, primary — used by in-cluster builds)
+- `docker-hosted.sanscfs.dev/skynet-base` (internal, primary — used by in-cluster builds)
 - `ghcr.io/sanscfs/skynet-base` (external, backup)
 
 ## Contents
